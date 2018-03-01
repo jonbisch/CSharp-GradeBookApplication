@@ -19,7 +19,7 @@ namespace GradeBook.GradeBooks
             List<double> grades = new List<double>();
             Students.ForEach(s => grades.AddRange(s.Grades));
 
-            var rank = (grades.Where(g => g < averageGrade).Count() / grades.Count()) * 100;
+            var rank = ((decimal)grades.Where(g => g < averageGrade).Count() / grades.Count()) * 100;
 
             if (rank >= 80)
             {
