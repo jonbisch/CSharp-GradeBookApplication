@@ -45,7 +45,11 @@ namespace GradeBook.UserInterfaces
 
             var isWeightedParseSuccess = bool.TryParse(parts[3], out isWeighted);
 
-            if (!isWeightedParseSuccess) return;
+            if (!isWeightedParseSuccess)
+            {
+                Console.WriteLine(parts[3] + " is not a valid. Must be true or false.");
+                return;
+            }
 
             BaseGradeBook gradeBook;
             switch (type)
